@@ -1,7 +1,10 @@
 ﻿using AdockaClient;
+using AdockaWork.Interfaces;
+using AdockaWork.Repo;
 using Prism.Unity;
 using AdockaWork.Views;
 using Microsoft.Practices.Unity;
+using AdockaWork.Services;
 
 namespace AdockaWork
 {
@@ -18,11 +21,18 @@ namespace AdockaWork
         }
         protected override void RegisterTypes()
         {
+            Container.RegisterType<IAdockaApiService, AdockaApiService>();
+            Container.RegisterType<IUserService, UserService>();
+            Container.RegisterType(typeof(ILocalRepository<>), typeof(LocalRepository<>));
+
+
             Container.RegisterTypeForNavigation<LoginPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-
-            Container.RegisterType<IStandardAuth, StandardAuth>();
-            Container.RegisterTypeForNavigation<LoginPage>();
+            Container.RegisterTypeForNavigation<MainMasterDetailPage>();
+            Container.RegisterTypeForNavigation<MyNavigationPage>();
+            Container.RegisterTypeForNavigation<MyWorkItemsPage>();
+            Container.RegisterTypeForNavigation<MyProfilePage>();
+            Container.RegisterTypeForNavigation<MyAvailabilityPage>();
         }
     }
 }

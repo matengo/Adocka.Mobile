@@ -5,14 +5,20 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Plugin.Settings;
 using Xamarin.Forms;
+using Newtonsoft.Json;
+using AdockaWork.Services;
+using Prism.Navigation;
+using Prism.Services;
 
 namespace AdockaWork.ViewModels
 {
-    public class LoginPageViewModel : BindableBase
+    public class LoginPageViewModel : BindableBase, INavigationAware
     {
-        private readonly IStandardAuth _standardAuth;
-
+        private readonly IUserService _userService;
+        private readonly INavigationService _navigationService;
+        private readonly IPageDialogService _dialogService;
         private string _email;
         public string Email
         {
@@ -34,19 +40,34 @@ namespace AdockaWork.ViewModels
             set { SetProperty(ref _message, value); }
         }
 
-        public LoginPageViewModel(IStandardAuth auth)
+        public LoginPageViewModel(IUserService userService, INavigationService navigationService, IPageDialogService dialogService)
         {
-            _standardAuth = auth;
+            _userService = userService;
+            _navigationService = navigationService;
+            _dialogService = dialogService;
         }
+        public void OnNavigatedFrom(NavigationParameters parameters)
+        {
+
+        }
+        public void OnNavigatedTo(NavigationParameters parameters)
+        {
+            if (_userService.GetUser() != null)
+                _navigationService.NavigateAsync("MainMasterDetailPage/MyNavigationPage/MyWorkItemsPage");
+        }
+
         public DelegateCommand LoginCommand => new DelegateCommand(Login);
         public async void Login()
         {
-            var user = await _standardAuth.LoginUser("", Email, Password);
-
-            //Fortsätt
-            //Application.Current.Properties["PersonId"] = user.FirstName;
-            
-            Message = user.FirstName;
+            var user = await _userService.LoginUser(Email, Password);
+            if (user == null)
+            {
+                await _dialogService.DisplayAlertAsync("Fel anvnamn eller lösenord", "Fel användarnamn eller lösenord", "Ok");
+            }
+            else
+            {
+                await _navigationService.NavigateAsync("MainMasterDetailPage/MyNavigationPage/MyWorkItemsPage");
+            }
         }
     }
 }

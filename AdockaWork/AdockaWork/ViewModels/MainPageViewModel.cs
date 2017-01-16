@@ -10,16 +10,18 @@ namespace AdockaWork.ViewModels
 {
     public class MainPageViewModel : BindableBase, INavigationAware
     {
-        private readonly IStandardAuth _standardAuth;
+        private readonly IAdockaApiService _adocka;
+        private readonly INavigationService _navigationService;
         private string _title;
         public string Title
         {
             get { return _title; }
             set { SetProperty(ref _title, value); }
         }
-        public MainPageViewModel(IStandardAuth auth)
+        public MainPageViewModel(IAdockaApiService adocka, INavigationService navigationService)
         {
-            _standardAuth = auth;
+            _adocka = adocka;
+            _navigationService = navigationService;
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -34,7 +36,7 @@ namespace AdockaWork.ViewModels
         public DelegateCommand SaveCommand => new DelegateCommand(Save);
         public async void Save()
         {
-            var user = await _standardAuth.LoginUser("", "mattias@adocka.com", "tstt1234");
+            var user = await _adocka.GetApiUserAsync("", "mattias@adocka.com", "tstt1234");
             Title = user.FirstName;
             //Title = "Test";
         }

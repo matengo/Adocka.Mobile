@@ -25,6 +25,11 @@ namespace AdockaWork.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
+
+            //Added to prevent iOS linker to strip behaviors assembly out of deployed package.
+            Behaviors.Infrastructure.Init();
+
+
             LoadApplication(new App(new iOSInitializer()));
 
             return base.FinishedLaunching(app, options);

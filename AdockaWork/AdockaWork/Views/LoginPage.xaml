@@ -5,12 +5,10 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="AdockaWork.Views.LoginPage">
   <ContentPage.Content>
-    <StackLayout VerticalOptions="StartAndExpand">
-      <Label Text="Email" />
+    <StackLayout VerticalOptions="Center" Spacing="20" Padding="20">
+     
       <Entry Placeholder="Email" Text="{Binding Email}" />
-      
-      <Label Text="Lösenord" />
-      <Entry IsPassword="true" Text="{Binding Password}" />
+      <Entry Placeholder="Lösenord" IsPassword="true" Text="{Binding Password}" />
       <Button Text="Login" Command="{Binding LoginCommand}" />
       <Label Text="{Binding Message}" />
     </StackLayout>
