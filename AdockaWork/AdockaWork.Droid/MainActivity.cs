@@ -1,17 +1,13 @@
-﻿using System;
-
+﻿using AdockaWork;
 using Android.App;
 using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
 using Android.OS;
-using Prism.Unity;
 using Microsoft.Practices.Unity;
+using Prism.Unity;
 
-namespace AdockaWork.Droid
+namespace Adocka.Mobile.Droid
 {
-    [Activity(Label = "AdockaWork", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+    [Activity(Label = "Adocka.Mobile", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
         protected override void OnCreate(Bundle bundle)

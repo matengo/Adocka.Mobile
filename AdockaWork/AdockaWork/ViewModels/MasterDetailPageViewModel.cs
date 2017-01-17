@@ -1,18 +1,16 @@
-﻿using Prism.Commands;
+﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Adocka.Mobile.Models;
+using Adocka.Mobile.Services;
+using AdockaClientPCL.Models;
+using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using AdockaWork.Models;
 using Prism.Services;
-using System.Threading.Tasks;
-using AdockaClientPCL.Models;
-using AdockaWork.Services;
 
-namespace AdockaWork.ViewModels
+namespace Adocka.Mobile.ViewModels
 {
-    public class MainMasterDetailPageViewModel : BindableBase
+    public class MasterDetailPageViewModel : BindableBase
     {
         private readonly INavigationService _navigationService;
         private readonly IPageDialogService _dialogService;
@@ -34,18 +32,21 @@ namespace AdockaWork.ViewModels
         }
         
         public DelegateCommand NavigateCommand { get; set; }
-        public MainMasterDetailPageViewModel(INavigationService navigationService, IPageDialogService dialogService, IUserService userService)
+        public DelegateCommand LogoutCommand { get; set; }
+        public MasterDetailPageViewModel(INavigationService navigationService, IPageDialogService dialogService, IUserService userService)
         {
             _navigationService = navigationService;
             _dialogService = dialogService;
             _userService = userService;
             NavigateCommand = DelegateCommand.FromAsyncHandler(async () => await Navigate());
-            
+            LogoutCommand = DelegateCommand.FromAsyncHandler(async () => await Logout());
+
             MenuItems = new List<MenuItem>
             {
-                new MenuItem() { Title = "Mina uppdrag", Icon = "itemIcon1.png", Target = "MyNavigationPage/MyWorkItemsPage" },
-                new MenuItem() { Title = "Min tillgänglighet", Icon = "itemIcon1.png", Target = "MyNavigationPage/MyAvailabilityPage" },
-                new MenuItem() { Title = "Min profil", Icon = "itemIcon1.png", Target = "MyNavigationPage/MyProfilePage" }
+                new MenuItem() { Title = "Kunder", Icon = "itemIcon1.png", Target = "NavigationPage/CustomersPage" },
+                new MenuItem() { Title = "Beställningar", Icon = "itemIcon1.png", Target = "NavigationPage/OrdersPage" },
+                new MenuItem() { Title = "Leveranser", Icon = "itemIcon1.png", Target = "NavigationPage/DeliveriesPage" },
+                new MenuItem() { Title = "Min profil", Icon = "itemIcon1.png", Target = "NavigationPage/MyProfilePage" }
             };
 
             User = _userService.GetUser();
@@ -56,7 +57,12 @@ namespace AdockaWork.ViewModels
             //_dialogService.DisplayAlertAsync(name, "Fel användarnamn eller lösenord", "Ok");
             await _navigationService.NavigateAsync(this.SelectedItem.Target);
         }
-
+         
+        private async Task Logout()
+        {
+            await _userService.LogoutUser();
+            await _navigationService.NavigateAsync("LoginPage");
+        }
         public void OnNavigatedFrom(NavigationParameters parameters)
         {
             

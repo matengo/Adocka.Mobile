@@ -1,12 +1,11 @@
-﻿using AdockaClient;
-using AdockaWork.Interfaces;
-using AdockaWork.Repo;
-using Prism.Unity;
-using AdockaWork.Views;
+﻿using Adocka.Mobile.Repo;
+using Adocka.Mobile.Services;
+using Adocka.Mobile.Views;
+using AdockaClient;
 using Microsoft.Practices.Unity;
-using AdockaWork.Services;
+using Prism.Unity;
 
-namespace AdockaWork
+namespace Adocka.Mobile
 {
     public partial class App : PrismApplication
     {
@@ -28,11 +27,13 @@ namespace AdockaWork
 
             Container.RegisterTypeForNavigation<LoginPage>();
             Container.RegisterTypeForNavigation<MainPage>();
-            Container.RegisterTypeForNavigation<MainMasterDetailPage>();
-            Container.RegisterTypeForNavigation<MyNavigationPage>();
+            Container.RegisterTypeForNavigation<MasterDetailPage>();
+            Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MyWorkItemsPage>();
             Container.RegisterTypeForNavigation<MyProfilePage>();
-            Container.RegisterTypeForNavigation<MyAvailabilityPage>();
+            Container.RegisterTypeForNavigation<DeliveriesPage>();
+            Container.RegisterTypeForNavigation<CustomersPage>();
+            Container.RegisterTypeForNavigation<OrdersPage>();
         }
     }
 }

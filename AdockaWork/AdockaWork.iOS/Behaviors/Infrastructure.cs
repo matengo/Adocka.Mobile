@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace AdockaWork.iOS.Behaviors
+namespace Adocka.Mobile.iOS.Behaviors
 {
     public static class Infrastructure
     {

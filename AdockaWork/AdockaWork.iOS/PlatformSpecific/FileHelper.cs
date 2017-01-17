@@ -1,13 +1,11 @@
-﻿using AdockaWork.Interfaces;
-using AdockaWork.iOS.PlatformSpecific;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Text;
+using Adocka.Mobile.iOS.PlatformSpecific;
+using Adocka.Mobile.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileHelper))]
-namespace AdockaWork.iOS.PlatformSpecific
+namespace Adocka.Mobile.iOS.PlatformSpecific
 {
     public class FileHelper : IFileHelper
     {

@@ -7,8 +7,8 @@
     <ProjectGuid>{72A61F8E-80B8-4133-99B1-72DD9040DFE3}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdockaWork.UWP</RootNamespace>
-    <AssemblyName>AdockaWork.UWP</AssemblyName>
+    <RootNamespace>Adocka.Mobile.UWP</RootNamespace>
+    <AssemblyName>Adocka.Mobile.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetPlatformVersion>10.0.14393.0</TargetPlatformVersion>
@@ -100,6 +100,7 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="PlatformSpecific\FileHelper.cs" />
+    <Compile Include="PlatformSpecific\PlatformCultureInfo.cs" />
     <Compile Include="PlatformSpecific\SQLite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -130,8 +131,9 @@
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdockaWork\AdockaWork.csproj">
-      <Name>AdockaWork</Name>
+    <ProjectReference Include="..\AdockaWork\Adocka.Mobile.csproj">
+      <Name>Adocka.Mobile</Name>
+      <Project>{BA53A0FC-8BDE-45DE-9EDB-AD5E2B9FD800}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

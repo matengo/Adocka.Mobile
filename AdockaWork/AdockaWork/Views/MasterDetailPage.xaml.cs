@@ -2,9 +2,9 @@
 
 namespace Adocka.Mobile.Views
 {
-    public partial class LoginPage : ContentPage
+    public partial class MasterDetailPage : Xamarin.Forms.MasterDetailPage
     {
-        public LoginPage()
+        public MasterDetailPage()
         {
             InitializeComponent();
         }

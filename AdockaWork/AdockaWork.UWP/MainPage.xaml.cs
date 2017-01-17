@@ -1,21 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
+﻿using Microsoft.Practices.Unity;
 using Prism.Unity;
-using Microsoft.Practices.Unity;
 
-namespace AdockaWork.UWP
+namespace Adocka.Mobile.UWP
 {
     public sealed partial class MainPage
     {
@@ -23,7 +9,7 @@ namespace AdockaWork.UWP
         {
             this.InitializeComponent();
 
-            LoadApplication(new AdockaWork.App(new UwpInitializer()));
+            LoadApplication(new Mobile.App(new UwpInitializer()));
         }
     }
 

@@ -1,9 +1,9 @@
-﻿using AdockaWork.Interfaces;
-using AdockaWork.Droid.PlatformSpecific;
+﻿using AdockaWork.Droid.PlatformSpecific;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using Adocka.Mobile.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileHelper))]

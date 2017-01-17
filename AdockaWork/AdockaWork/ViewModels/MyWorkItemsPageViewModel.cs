@@ -1,10 +1,6 @@
-﻿using Prism.Commands;
-using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using Prism.Mvvm;
 
-namespace AdockaWork.ViewModels
+namespace Adocka.Mobile.ViewModels
 {
     public class MyWorkItemsPageViewModel : BindableBase
     {

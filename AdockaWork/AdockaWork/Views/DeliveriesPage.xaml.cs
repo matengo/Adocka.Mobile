@@ -2,9 +2,9 @@
 
 namespace Adocka.Mobile.Views
 {
-    public partial class LoginPage : ContentPage
+    public partial class DeliveriesPage : ContentPage
     {
-        public LoginPage()
+        public DeliveriesPage()
         {
             InitializeComponent();
         }

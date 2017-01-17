@@ -3,7 +3,7 @@
                   xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                   xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
                   prism:ViewModelLocator.AutowireViewModel="True"
-                  x:Class="AdockaWork.Views.MainMasterDetailPage">
+                  x:Class="Adocka.Mobile.Views.MasterDetailPage">
 
 
 
@@ -56,6 +56,16 @@
             </DataTemplate>
           </ListView.ItemTemplate>
         </ListView>
+        
+        <StackLayout BackgroundColor="#e74c3c"
+                     HeightRequest="175">
+
+          <Button Text="Logga ut"
+                 FontSize="20"
+                 VerticalOptions="CenterAndExpand"
+                 TextColor="White"
+                 HorizontalOptions="Center" Command="{Binding LogoutCommand}" />
+        </StackLayout>
       </StackLayout>
 
     </ContentPage>

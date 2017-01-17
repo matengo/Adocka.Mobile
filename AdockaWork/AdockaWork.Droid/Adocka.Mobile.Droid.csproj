@@ -9,8 +9,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>AdockaWork.Droid</RootNamespace>
-    <AssemblyName>AdockaWork.Droid</AssemblyName>
+    <RootNamespace>Adocka.Mobile.Droid</RootNamespace>
+    <AssemblyName>Adocka.Mobile.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>true</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -171,6 +171,7 @@
     <Compile Include="Helpers\Settings.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="PlatformSpecific\FileHelper.cs" />
+    <Compile Include="PlatformSpecific\PlatformCultureInfo.cs" />
     <Compile Include="PlatformSpecific\SQLite.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -197,8 +198,9 @@
     <Content Include="Properties\AndroidManifest.xml" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdockaWork\AdockaWork.csproj">
-      <Name>AdockaWork</Name>
+    <ProjectReference Include="..\AdockaWork\Adocka.Mobile.csproj">
+      <Name>Adocka.Mobile</Name>
+      <Project>{BA53A0FC-8BDE-45DE-9EDB-AD5E2B9FD800}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

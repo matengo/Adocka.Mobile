@@ -3,10 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="Adocka.Mobile.Views.MainPage"
-             Title="MainPage">
-  <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
-    <Label Text="{Binding Title}" />
-    <Button Text="Klicka" Command="{Binding SaveCommand}"></Button>
-  </StackLayout>
+             x:Class="Adocka.Mobile.Views.CustomersPage" 
+             Title="Kunder">
+
 </ContentPage>

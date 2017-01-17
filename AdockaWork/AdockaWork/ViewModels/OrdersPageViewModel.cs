@@ -4,11 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdockaWork.ViewModels
+namespace Adocka.Mobile.ViewModels
 {
-    public class MyNavigationPageViewModel : BindableBase
+    public class OrdersPageViewModel : BindableBase
     {
-        public MyNavigationPageViewModel()
+        public OrdersPageViewModel()
         {
 
         }

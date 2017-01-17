@@ -1,10 +1,10 @@
-﻿using AdockaWork.Interfaces;
-using AdockaWork.UWP.PlatformSpecific;
+﻿using AdockaWork.UWP.PlatformSpecific;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using Windows.Storage;
+using Adocka.Mobile.Interfaces;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(FileHelper))]

@@ -1,6 +1,6 @@
 ﻿using Xamarin.Forms;
 
-namespace AdockaWork.Views
+namespace Adocka.Mobile.Views
 {
     public partial class MyWorkItemsPage : ContentPage
     {

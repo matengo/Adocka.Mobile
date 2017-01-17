@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
-using System.Threading.Tasks;
-using AdockaWork.Interfaces;
-using SQLite.Net.Async;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq.Expressions;
-using System;
+using System.Threading.Tasks;
+using Adocka.Mobile.Interfaces;
+using SQLite.Net.Async;
 
-namespace AdockaWork.Repo
+namespace Adocka.Mobile.Repo
 {
     public interface ILocalRepository<T> where T : class
     {

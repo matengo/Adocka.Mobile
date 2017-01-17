@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using AdockaClientPCL.Models;
+﻿using System.Threading.Tasks;
 using AdockaClient;
+using AdockaClientPCL.Models;
 using Newtonsoft.Json;
 using Plugin.Settings;
 
-namespace AdockaWork.Services
+namespace Adocka.Mobile.Services
 {
     public interface IUserService
     {
         IAdockaApiUser GetUser();
         Task<IAdockaApiUser> LoginUser(string username, string password);
+        Task LogoutUser();
     }
 
     public class UserService : IUserService
@@ -39,6 +35,10 @@ namespace AdockaWork.Services
             CrossSettings.Current.AddOrUpdateValue("User", serializeduser);
 
             return user;
+        }
+        public async Task LogoutUser()
+        {
+            CrossSettings.Current.Remove("User");
         }
     }
 }

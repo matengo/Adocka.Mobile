@@ -8,9 +8,9 @@
     <ProjectGuid>{E1F01E50-1323-489A-B7EC-799D658FC569}</ProjectGuid>
     <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AdockaWork.iOS</RootNamespace>
+    <RootNamespace>Adocka.Mobile.iOS</RootNamespace>
     <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
-    <AssemblyName>AdockaWork.iOS</AssemblyName>
+    <AssemblyName>Adocka.Mobile.iOS</AssemblyName>
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
   </PropertyGroup>
@@ -94,6 +94,7 @@
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="PlatformSpecific\PlatformCultureInfo.cs" />
     <Compile Include="PlatformSpecific\FileHelper.cs" />
     <Compile Include="PlatformSpecific\SQLite.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -102,8 +103,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdockaWork\AdockaWork.csproj">
-      <Name>AdockaWork</Name>
+    <ProjectReference Include="..\AdockaWork\Adocka.Mobile.csproj">
+      <Name>Adocka.Mobile</Name>
+      <Project>{BA53A0FC-8BDE-45DE-9EDB-AD5E2B9FD800}</Project>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

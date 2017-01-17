@@ -1,18 +1,10 @@
-﻿using AdockaClient;
+﻿using Adocka.Mobile.Services;
 using Prism.Commands;
 using Prism.Mvvm;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using Plugin.Settings;
-using Xamarin.Forms;
-using Newtonsoft.Json;
-using AdockaWork.Services;
 using Prism.Navigation;
 using Prism.Services;
 
-namespace AdockaWork.ViewModels
+namespace Adocka.Mobile.ViewModels
 {
     public class LoginPageViewModel : BindableBase, INavigationAware
     {
@@ -53,7 +45,7 @@ namespace AdockaWork.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             if (_userService.GetUser() != null)
-                _navigationService.NavigateAsync("MainMasterDetailPage/MyNavigationPage/MyWorkItemsPage");
+                _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveriesPage");
         }
 
         public DelegateCommand LoginCommand => new DelegateCommand(Login);
@@ -66,7 +58,7 @@ namespace AdockaWork.ViewModels
             }
             else
             {
-                await _navigationService.NavigateAsync("MainMasterDetailPage/MyNavigationPage/MyWorkItemsPage");
+                await _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveriesPage");
             }
         }
     }

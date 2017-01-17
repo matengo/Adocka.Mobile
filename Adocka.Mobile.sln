@@ -3,13 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdockaWork", "AdockaWork\AdockaWork\AdockaWork.csproj", "{BA53A0FC-8BDE-45DE-9EDB-AD5E2B9FD800}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adocka.Mobile", "AdockaWork\AdockaWork\Adocka.Mobile.csproj", "{BA53A0FC-8BDE-45DE-9EDB-AD5E2B9FD800}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdockaWork.Droid", "AdockaWork\AdockaWork.Droid\AdockaWork.Droid.csproj", "{655F3E86-D4E2-4F4C-850A-E9CD31942338}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adocka.Mobile.Droid", "AdockaWork\AdockaWork.Droid\Adocka.Mobile.Droid.csproj", "{655F3E86-D4E2-4F4C-850A-E9CD31942338}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdockaWork.iOS", "AdockaWork\AdockaWork.iOS\AdockaWork.iOS.csproj", "{E1F01E50-1323-489A-B7EC-799D658FC569}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adocka.Mobile.iOS", "AdockaWork\AdockaWork.iOS\Adocka.Mobile.iOS.csproj", "{E1F01E50-1323-489A-B7EC-799D658FC569}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdockaWork.UWP", "AdockaWork\AdockaWork.UWP\AdockaWork.UWP.csproj", "{72A61F8E-80B8-4133-99B1-72DD9040DFE3}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Adocka.Mobile.UWP", "AdockaWork\AdockaWork.UWP\Adocka.Mobile.UWP.csproj", "{72A61F8E-80B8-4133-99B1-72DD9040DFE3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

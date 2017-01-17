@@ -1,16 +1,14 @@
-using AdockaWork.Interfaces;
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Text;
-using Xamarin.Forms;
+using Adocka.Mobile.iOS.PlatformSpecific;
+using Adocka.Mobile.Interfaces;
 using SQLite.Net;
 using SQLite.Net.Async;
 using SQLite.Net.Platform.XamarinIOS;
-using AdockaWork.iOS.PlatformSpecific;
+using Xamarin.Forms;
 
 [assembly: Dependency(typeof(SQLiteiOS))]
-namespace AdockaWork.iOS.PlatformSpecific
+namespace Adocka.Mobile.iOS.PlatformSpecific
 {
     public class SQLiteiOS : ISQLite
     {
