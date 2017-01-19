@@ -45,7 +45,7 @@ namespace Adocka.Mobile.ViewModels
             {
                 new MenuItem() { Title = "Kunder", Icon = "itemIcon1.png", Target = "NavigationPage/CustomersPage" },
                 new MenuItem() { Title = "Beställningar", Icon = "itemIcon1.png", Target = "NavigationPage/OrdersPage" },
-                new MenuItem() { Title = "Leveranser", Icon = "itemIcon1.png", Target = "NavigationPage/DeliveriesPage" },
+                new MenuItem() { Title = "Leveranser", Icon = "itemIcon1.png", Target = "NavigationPage/DeliveryDatesPage" },
                 new MenuItem() { Title = "Min profil", Icon = "itemIcon1.png", Target = "NavigationPage/MyProfilePage" }
             };
 

@@ -1,6 +1,8 @@
 ﻿using Adocka.Mobile.Repo;
 using Adocka.Mobile.Services;
+using Adocka.Mobile.ViewModels.Delivery;
 using Adocka.Mobile.Views;
+using Adocka.Mobile.Views.Delivery;
 using AdockaClient;
 using Microsoft.Practices.Unity;
 using Prism.Unity;
@@ -31,9 +33,14 @@ namespace Adocka.Mobile
             Container.RegisterTypeForNavigation<NavigationPage>();
             Container.RegisterTypeForNavigation<MyWorkItemsPage>();
             Container.RegisterTypeForNavigation<MyProfilePage>();
-            Container.RegisterTypeForNavigation<DeliveriesPage>();
             Container.RegisterTypeForNavigation<CustomersPage>();
             Container.RegisterTypeForNavigation<OrdersPage>();
+
+            //Deliveries
+            Container.RegisterTypeForNavigation<DeliveryDatesPage, DeliveryDatesPageViewModel>();
+            Container.RegisterTypeForNavigation<DeliveryTagsPage, DeliveryTagsPageViewModel>();
+            Container.RegisterTypeForNavigation<DeliveriesPage, DeliveriesPageViewModel>();
+            Container.RegisterTypeForNavigation<DeliveryPage, DeliveriesPageViewModel>();
         }
     }
 }

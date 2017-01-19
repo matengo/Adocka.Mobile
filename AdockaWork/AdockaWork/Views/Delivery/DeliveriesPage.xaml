@@ -35,7 +35,7 @@
     <ListView
               RowHeight="60"
               SeparatorVisibility="Default"
-              BackgroundColor="White"  ItemsSource="{Binding DeliveryDates}" SelectedItem="{Binding SelectedDate}" IsVisible="{Binding DateNotSelected}">
+              BackgroundColor="White"  ItemsSource="{Binding Deliveries}" SelectedItem="{Binding SelectedDelivery}">
 
       <ListView.ItemTemplate>
         <DataTemplate>
@@ -47,7 +47,7 @@
                          Padding="20,10,0,10"
                          Spacing="20">
 
-              <Label Text="{Binding DeliveryDate, StringFormat='{0:dddd d MMMM}'}"
+              <Label Text="{Binding Name}"
                      FontSize="Medium"
                      VerticalOptions="Center"
                      TextColor="Black"/>
@@ -57,29 +57,5 @@
       </ListView.ItemTemplate>
     </ListView>
     
-    <ListView
-              RowHeight="60"
-              SeparatorVisibility="Default"
-              BackgroundColor="White"  ItemsSource="{Binding ShippingTags}" SelectedItem="{Binding SelectedShippingTag}" IsVisible="{Binding DateSelected}">
-
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-
-            <!-- Main design for our menu items -->
-            <StackLayout VerticalOptions="FillAndExpand"
-                         Orientation="Horizontal"
-                         Padding="20,10,0,10"
-                         Spacing="20">
-
-              <Label Text="{Binding}"
-                     FontSize="Medium"
-                     VerticalOptions="Center"
-                     TextColor="Black"/>
-            </StackLayout>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
   </StackLayout>
 </ContentPage>

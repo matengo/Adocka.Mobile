@@ -45,7 +45,7 @@ namespace Adocka.Mobile.ViewModels
         public void OnNavigatedTo(NavigationParameters parameters)
         {
             if (_userService.GetUser() != null)
-                _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveriesPage");
+                _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveryDatesPage");
         }
 
         public DelegateCommand LoginCommand => new DelegateCommand(Login);
@@ -58,7 +58,7 @@ namespace Adocka.Mobile.ViewModels
             }
             else
             {
-                await _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveriesPage");
+                await _navigationService.NavigateAsync("MasterDetailPage/NavigationPage/DeliveryDatesPage");
             }
         }
     }
