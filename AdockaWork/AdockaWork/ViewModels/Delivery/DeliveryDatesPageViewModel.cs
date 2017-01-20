@@ -27,8 +27,6 @@ namespace Adocka.Mobile.ViewModels.Delivery
         public ObservableCollection<DateTime?> DeliveryDates { get; set; }
         public DateTime? SelectedDate { get; set; }
         
-        //public DelegateCommand DateSelectedCommand => new DelegateCommand(Navigate).ObservesProperty(() => SelectedDate);
-
         public DeliveryDatesPageViewModel(IUserService userService, INavigationService navigationService, IAdockaApiService adockaService)
         {
             _userService = userService;
@@ -51,8 +49,11 @@ namespace Adocka.Mobile.ViewModels.Delivery
         }
         private async void OnSelectedDateChanged()
         {
-            var p = new NavigationParameters("?date=" + this.SelectedDate);
-            await _navigationService.NavigateAsync("DeliveryTagsPage", p);
+            if (this.SelectedDate != null)
+            {
+                var date = SelectedDate.Value.ToString("yyyy-M-d");
+                await _navigationService.NavigateAsync("DeliveryTagsPage?date=" + date);
+            }
         }
     }
 }

@@ -4,6 +4,23 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Adocka.Mobile.Views.Delivery.DeliveryTagsPage">
+
+  <StackLayout Orientation="Vertical">
+
+    <!-- 
+             This StackLayout you can use for other
+             data that you want to have in your menu drawer
+        -->
+    <StackLayout BackgroundColor="#e74c3c"
+                 HeightRequest="175">
+
+      
+      <Label Text="{Binding SelectedShippingTag}"
+             FontSize="20"
+             VerticalOptions="CenterAndExpand"
+             TextColor="White"
+             HorizontalOptions="Center"/>
+    </StackLayout>
   <ListView
                 RowHeight="60"
                 SeparatorVisibility="Default"
@@ -13,7 +30,7 @@
       <DataTemplate>
         <ViewCell>
 
-          <!-- Main design for our menu items -->
+           Main design for our menu items 
           <StackLayout VerticalOptions="FillAndExpand"
                        Orientation="Horizontal"
                        Padding="20,10,0,10"
@@ -28,4 +45,5 @@
       </DataTemplate>
     </ListView.ItemTemplate>
   </ListView>
+    </StackLayout>
 </ContentPage>

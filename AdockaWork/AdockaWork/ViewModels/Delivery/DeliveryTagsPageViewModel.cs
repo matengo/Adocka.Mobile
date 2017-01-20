@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using Adocka.Mobile.Helpers;
 using Adocka.Mobile.Services;
@@ -20,10 +21,11 @@ namespace Adocka.Mobile.ViewModels.Delivery
         private readonly IUserService _userService;
         private readonly INavigationService _navigationService;
 
-        public ObservableCollection<string> ShippingTags { get; set; }
-
         public DateTime SelectedDate { get; set; }
         public string SelectedShippingTag { get; set; }
+        public ObservableCollection<string> ShippingTags { get; set; }
+
+        
         
         public DeliveryTagsPageViewModel(IUserService userService, INavigationService navigationService, IAdockaApiService adockaService)
         {
@@ -45,16 +47,19 @@ namespace Adocka.Mobile.ViewModels.Delivery
         {
             if (parameters.ContainsKey("date"))
             {
-                this.SelectedDate = (DateTime)parameters["date"];
+                SelectedDate = DateTime.Parse((string)parameters["date"]);
+                var tags = await _api.Delivery.RecentShippingTagsAsync();
+                this.ShippingTags = new ObservableCollection<string>(tags.ToList());
             }
-
-            var tags = await _api.Delivery.RecentShippingTagsAsync();
-            this.ShippingTags = new ObservableCollection<string>(tags);
         }
-
         private async void OnSelectedShippingTagChanged()
         {
-            await _navigationService.NavigateAsync("NavigationPage/DeliveriesPage?date=" + this.SelectedDate + "&tag=" + this.SelectedShippingTag);
+            if (!string.IsNullOrEmpty(this.SelectedShippingTag))
+            {
+                var date = SelectedDate.ToString("yyyy-M-d");
+                var tagstr = this.SelectedShippingTag;
+                await _navigationService.NavigateAsync("DeliveriesPage?date=" + date + "&tag=" + tagstr);
+            }
         }
     }
 }

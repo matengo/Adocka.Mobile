@@ -11,7 +11,13 @@
     <StackLayout BackgroundColor="#e74c3c"
                      HeightRequest="175">
 
-      <Label Text="{Binding SelectedDate}"
+      <Label Text="{Binding SelectedDate, StringFormat='{0:MMMM d, yyyy}'}"
+             FontSize="20"
+             VerticalOptions="CenterAndExpand"
+             TextColor="White"
+             HorizontalOptions="Center"/>
+      
+      <Label Text="{Binding SelectedShippingTag}"
              FontSize="20"
              VerticalOptions="CenterAndExpand"
              TextColor="White"

@@ -26,7 +26,7 @@ namespace Adocka.Mobile.ViewModels.Delivery
         public DateTime SelectedDate { get; set; }
         public string SelectedShippingTag { get; set; }
         
-        public Command DeliverySelected { get; set; }
+        
 
         public DeliveriesPageViewModel(IUserService userService, INavigationService navigationService, IAdockaApiService adockaService)
         {
@@ -36,10 +36,7 @@ namespace Adocka.Mobile.ViewModels.Delivery
 
             _adockaUser = _userService.GetUser();
             _api = _adockaApiService.GetApiClient(_adockaUser.PersonId, _adockaUser.ApiKey);
-
-            DeliverySelected = new MvvmCommand(async (x) => {
-                await OnDeliverySelected();
-            }, (x) => SelectedDelivery!=null);
+            
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -51,15 +48,15 @@ namespace Adocka.Mobile.ViewModels.Delivery
         {
             if (parameters.ContainsKey("date") && parameters.ContainsKey("tag"))
             {
-                var date = (DateTime)parameters["date"];
-                var tag = (string)parameters["tag"];
-                var deliveries = await _api.Delivery.GetByDeliveryDateAsync(date, date, tag);
+                this.SelectedDate = DateTime.Parse((string)parameters["date"]);
+                this.SelectedShippingTag = (string)parameters["tag"];
+                var deliveries = await _api.Delivery.GetByDeliveryDateAsync(this.SelectedDate, this.SelectedDate, this.SelectedShippingTag);
                 this.Deliveries = new ObservableCollection<AdockaDtoListOrder>(deliveries);
             }
         }
-        private async Task OnDeliverySelected()
+        private async void OnSelectedDeliveryChanged()
         {
-            await _navigationService.NavigateAsync("NavigationPage/DeliveryPage?id=" + this.SelectedDelivery.OrderId);
+            await _navigationService.NavigateAsync("DeliveryPage?id=" + this.SelectedDelivery.OrderId);
         }
     }
 }
