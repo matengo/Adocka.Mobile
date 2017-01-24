@@ -1,7 +1,9 @@
 ﻿using Adocka.Mobile.Repo;
 using Adocka.Mobile.Services;
+using Adocka.Mobile.ViewModels.Contact;
 using Adocka.Mobile.ViewModels.Delivery;
 using Adocka.Mobile.Views;
+using Adocka.Mobile.Views.Contact;
 using Adocka.Mobile.Views.Delivery;
 using AdockaClient;
 using Microsoft.Practices.Unity;
@@ -41,6 +43,8 @@ namespace Adocka.Mobile
             Container.RegisterTypeForNavigation<DeliveryTagsPage, DeliveryTagsPageViewModel>();
             Container.RegisterTypeForNavigation<DeliveriesPage, DeliveriesPageViewModel>();
             Container.RegisterTypeForNavigation<DeliveryPage, DeliveriesPageViewModel>();
+            Container.RegisterTypeForNavigation<ContactsPage, ContactsPageViewModel>();
+            Container.RegisterTypeForNavigation<ContactPage, ContactPageViewModel>();
         }
     }
 }
