@@ -4,5 +4,27 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Adocka.Mobile.Views.Contact.ContactPage" Title="{Binding ContactDetails.Name}">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Ändra" Command="{Binding EditCommand}" />
+  </ContentPage.ToolbarItems>
 
+  <ContentPage.Content>
+    <StackLayout>
+      <!--<Label Text="Above TableView"></Label>-->
+      <TableView Intent="Data">
+        <TableRoot>
+          <TableSection Title="Kontaktuppgifter">
+            <TextCell Text="Pers.Nr/Org.Nr" Detail="{Binding ContactDetails.SocialSecurityNo}" />
+            <TextCell Text="Namn" Detail="{Binding ContactDetails.Name}" />
+            <TextCell Text="E-post" Detail="{Binding ContactDetails.Email}" />
+            <TextCell Text="Mobil/tel1" Detail="{Binding ContactDetails.CellPhone}" />
+            <TextCell Text="Tel2" Detail="{Binding ContactDetails.Phone}" />
+          </TableSection>
+          <TableSection Title="Övrigt">
+            <TextCell Detail="{Binding ContactDetails.Comment}"></TextCell>
+          </TableSection>
+        </TableRoot>
+      </TableView>
+    </StackLayout>
+  </ContentPage.Content>
 </ContentPage>

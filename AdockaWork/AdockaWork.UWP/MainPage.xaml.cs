@@ -9,6 +9,9 @@ namespace Adocka.Mobile.UWP
         {
             this.InitializeComponent();
 
+            //Maps
+            Xamarin.FormsMaps.Init("INSERT_AUTHENTICATION_TOKEN_HERE");
+
             LoadApplication(new Mobile.App(new UwpInitializer()));
         }
     }

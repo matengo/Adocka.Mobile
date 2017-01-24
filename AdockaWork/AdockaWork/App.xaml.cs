@@ -45,6 +45,7 @@ namespace Adocka.Mobile
             Container.RegisterTypeForNavigation<DeliveryPage, DeliveriesPageViewModel>();
             Container.RegisterTypeForNavigation<ContactsPage, ContactsPageViewModel>();
             Container.RegisterTypeForNavigation<ContactPage, ContactPageViewModel>();
+            Container.RegisterTypeForNavigation<ContactEditPage, ContactEditPageViewModel>();
         }
     }
 }

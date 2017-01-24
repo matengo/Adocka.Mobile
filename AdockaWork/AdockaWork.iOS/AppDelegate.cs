@@ -23,7 +23,8 @@ namespace Adocka.Mobile.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-
+            //Maps
+            Xamarin.FormsMaps.Init();
             //Added to prevent iOS linker to strip behaviors assembly out of deployed package.
             Infrastructure.Init();
 

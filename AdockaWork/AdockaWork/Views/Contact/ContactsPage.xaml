@@ -4,6 +4,10 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="Adocka.Mobile.Views.Contact.ContactsPage">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Ny kontakt" />
+  </ContentPage.ToolbarItems>
+  
   
   <StackLayout Padding="5" Orientation="Vertical" VerticalOptions="StartAndExpand" Grid.Row="0" Grid.Column="0">
     <SearchBar Placeholder="Sök..." Text="{Binding SearchStr}" HeightRequest="50">

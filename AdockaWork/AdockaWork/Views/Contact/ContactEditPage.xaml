@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="Adocka.Mobile.Views.Contact.ContactEditPage" Title="{Binding ContactDetails.Name}">
+  <ContentPage.ToolbarItems>
+    <ToolbarItem Text="Spara" Command="{Binding SaveCommand}" />
+  </ContentPage.ToolbarItems>
+
+  <ContentPage.Content>
+    <StackLayout>
+      <!--<Label Text="Above TableView"></Label>-->
+      <TableView Intent="Data">
+        <TableRoot>
+          <TableSection>
+            <ImageCell ImageSource="{Binding ContactDetails.ImageUrl}" />
+          </TableSection>
+          <TableSection Title="Kontaktuppgifter">
+            <!--<SwitchCell Text="Är företag" />-->
+            <EntryCell Text="{Binding ContactDetails.SocialSecurityNo}" Placeholder="Pers.nr/Org.nr" />
+
+            
+            
+            <EntryCell Text="{Binding ContactDetails.FirstName}" Placeholder="Förnamn" />
+            <EntryCell Text="{Binding ContactDetails.LastName}" Placeholder="Efternamn" />
+            
+            <EntryCell Text="{Binding ContactDetails.Email}" Placeholder="E-post" />
+            <EntryCell Text="{Binding ContactDetails.CellPhone}" Placeholder="Mobil/Tel1" />
+            <EntryCell Text="{Binding ContactDetails.Phone}" Placeholder="Tel2" />
+          </TableSection>
+          <TableSection Title="Övrigt">
+            <EntryCell Text="{Binding ContactDetails.Comment}" Placeholder="Övrig information" />
+          </TableSection>
+        </TableRoot>
+      </TableView>
+    </StackLayout>
+  </ContentPage.Content>
+</ContentPage>

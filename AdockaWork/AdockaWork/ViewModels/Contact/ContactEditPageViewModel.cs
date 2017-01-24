@@ -13,7 +13,7 @@ using System.Threading.Tasks;
 namespace Adocka.Mobile.ViewModels.Contact
 {
     [ImplementPropertyChanged]
-    public class ContactPageViewModel : INavigationAware
+    public class ContactEditPageViewModel : INavigationAware
     {
         public AdockaDtoPersonDetails ContactDetails { get; set; }
         
@@ -24,9 +24,9 @@ namespace Adocka.Mobile.ViewModels.Contact
         private readonly IUserService _userService;
         private readonly INavigationService _navigationService;
 
-        public ICommand EditCommand { get; set; }
+        public ICommand SaveCommand { get; set; }
 
-        public ContactPageViewModel(IUserService userService, INavigationService navigationService, IAdockaApiService adockaService)
+        public ContactEditPageViewModel(IUserService userService, INavigationService navigationService, IAdockaApiService adockaService)
         {
             _userService = userService;
             _navigationService = navigationService;
@@ -35,7 +35,7 @@ namespace Adocka.Mobile.ViewModels.Contact
             _adockaUser = _userService.GetUser();
             _api = _adockaApiService.GetApiClient(_adockaUser.PersonId, _adockaUser.ApiKey);
 
-            EditCommand = new Command(async () => await EditAsync());
+            SaveCommand = new Command(async () => await SaveAsync());
         }
 
         public void OnNavigatedFrom(NavigationParameters parameters)
@@ -52,11 +52,11 @@ namespace Adocka.Mobile.ViewModels.Contact
                     this.ContactDetails = await _api.Person.GetContactDetailsAsync(personid);
             }
         }
-        public async Task EditAsync()
+        public async Task SaveAsync()
         {
             //Save and redirect
-            await _navigationService.NavigateAsync("ContactEditPage?id=" + this.ContactDetails.PersonId);
-            //await _navigationService.GoBackAsync();
+            await _api.Person.SaveContactAsync(this.ContactDetails);
+            await _navigationService.GoBackAsync();
         }
     }
 }

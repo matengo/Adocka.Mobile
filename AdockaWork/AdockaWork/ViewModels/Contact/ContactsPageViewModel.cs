@@ -66,12 +66,11 @@ namespace Adocka.Mobile.ViewModels.Contact
             else
                 this.SearchModel.ItemType = "customer";
 
-            var contacts = await _api.Person.SearchContactsAsync(this.SearchModel);
-            this.Contacts = new ObservableCollection<AdockaDtoPerson>(contacts.Result);
+            OnSearchStrChanged();
         }
         private async void OnSearchStrChanged()
         {
-            if (this.SearchStr.Length > 2)
+            if (string.IsNullOrEmpty(this.SearchStr) || this.SearchStr.Length > 2)
             {
                 this.SearchModel.SearchStr = this.SearchStr;
                 var contacts = await _api.Person.SearchContactsAsync(this.SearchModel);
