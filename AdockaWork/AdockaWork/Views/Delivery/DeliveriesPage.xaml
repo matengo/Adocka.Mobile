@@ -38,16 +38,19 @@
              HorizontalOptions="Center"/>
     </StackLayout>-->
 
-    <ListView
-              RowHeight="60"
-              SeparatorVisibility="Default"
-              BackgroundColor="White"  ItemsSource="{Binding Deliveries}" SelectedItem="{Binding SelectedDelivery}">
-
+    <ListView SeparatorVisibility="Default" ItemsSource="{Binding Deliveries}" SelectedItem="{Binding SelectedDelivery}">
       <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-
-            <!-- Main design for our menu items -->
+            <Grid RowSpacing="0">
+              <Label Grid.Row="0" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" />
+              <Label Grid.Row="0" Grid.Column="1" Text="{Binding TotalValueInclVat}" />
+              <Label Grid.Row="1" Grid.Column="0" Text="{Binding ShippingStreetName}" />
+            </Grid>
+          </ViewCell>
+          <!--<TextCell Text="{Binding Name}" Detail="{Binding ShippingStreetName}"></TextCell>-->
+          <!--<ViewCell>
+            
             <StackLayout VerticalOptions="FillAndExpand"
                          Orientation="Horizontal"
                          Padding="20,10,0,10"
@@ -58,7 +61,7 @@
                      VerticalOptions="Center"
                      TextColor="Black"/>
             </StackLayout>
-          </ViewCell>
+          </ViewCell>-->
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>

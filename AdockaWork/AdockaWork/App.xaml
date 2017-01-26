@@ -2,6 +2,12 @@
 <prism:PrismApplication xmlns="http://xamarin.com/schemas/2014/forms"
                         xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
                         xmlns:prism="clr-namespace:Prism.Unity;assembly=Prism.Unity.Forms"
+                        xmlns:light="clr-namespace:Xamarin.Forms.Themes;assembly=Xamarin.Forms.Theme.Light"
                         x:Class="Adocka.Mobile.App">
-
+  <prism:PrismApplication.Resources>
+    <ResourceDictionary MergedWith="light:LightThemeResources" />
+  </prism:PrismApplication.Resources>
+  <!--<Application.Resources>
+    <ResourceDictionary MergedWith="light:LightThemeResources" />
+  </Application.Resources>-->
 </prism:PrismApplication>

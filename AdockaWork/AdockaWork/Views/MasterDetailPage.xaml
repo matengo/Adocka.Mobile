@@ -30,7 +30,7 @@
         <ListView
                   RowHeight="60"
                   SeparatorVisibility="Default"
-                  BackgroundColor="#e8e8e8"  ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem}">
+                  ItemsSource="{Binding MenuItems}" SelectedItem="{Binding SelectedItem}">
 
           <ListView.ItemTemplate>
             <DataTemplate>
@@ -57,14 +57,8 @@
           </ListView.ItemTemplate>
         </ListView>
         
-        <StackLayout BackgroundColor="#e74c3c"
-                     HeightRequest="175">
-
-          <Button Text="Logga ut"
-                 FontSize="20"
-                 VerticalOptions="CenterAndExpand"
-                 TextColor="White"
-                 HorizontalOptions="Center" Command="{Binding LogoutCommand}" />
+        <StackLayout>
+          <Button Text="Logga ut" Command="{Binding LogoutCommand}" StyleClass="Link" />
         </StackLayout>
       </StackLayout>
 

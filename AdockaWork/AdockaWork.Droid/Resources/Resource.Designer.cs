@@ -26,6 +26,7 @@ namespace Adocka.Mobile.Droid
 		
 		public static void UpdateIdValues()
 		{
+			global::ModernHttpClient.Resource.String.library_name = global::Adocka.Mobile.Droid.Resource.String.library_name;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.ApplicationName = global::Adocka.Mobile.Droid.Resource.String.ApplicationName;
 			global::SQLite.Net.Platform.XamarinAndroid.Resource.String.Hello = global::Adocka.Mobile.Droid.Resource.String.Hello;
 			global::Xamarin.Forms.Platform.Android.Resource.Attribute.actionBarSize = global::Adocka.Mobile.Droid.Resource.Attribute.actionBarSize;
@@ -3409,6 +3410,9 @@ namespace Adocka.Mobile.Droid
 			
 			// aapt resource value: 0x7f06001e
 			public const int common_signin_button_text_long = 2131099678;
+			
+			// aapt resource value: 0x7f060047
+			public const int library_name = 2131099719;
 			
 			// aapt resource value: 0x7f06001f
 			public const int mr_button_content_description = 2131099679;
